@@ -24,12 +24,6 @@ def plot_frequency_table(column: str, frequency_table: pd.DataFrame):
 def plot_histogram(column: str, frequency_table: pd.DataFrame):
     px.histogram(frequency_table, x=column, y='frequency').show()
 
-def plot_pie(column:str, frequency_table: pd.DataFrame):
+
+def plot_pie(column: str, frequency_table: pd.DataFrame):
     px.pie(frequency_table, names=frequency_table[column], values=frequency_table['frequency'].values).show()
-
-
-if __name__ == '__main__':
-    df = read_csv("dados_nasc_vivos.csv")
-    ft = frequency_table('PARTO', df)
-    plot_frequency_table('PARTO', ft)
-    plot_pie('PARTO', ft)
